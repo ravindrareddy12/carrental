@@ -8,12 +8,21 @@ import TestimonialsPage from "./Pages/TestimonialsPage";
 import Team from "./Pages/Team";
 import Contact from "./Pages/Contact";
 
+const WelcomePage = () => {
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.heading}>Welcome to lanvaus.</h1>
+      <p style={styles.paragraph}>We're glad to have you here. Explore and enjoy!</p>
+    </div>
+  );
+};
+
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
-        <Route index path="/" element={<Home />} />
+        <Route index path="/" element={<WelcomePage />} />
         <Route path="about" element={<About />} />
         <Route path="models" element={<Models />} />
         <Route path="testimonials" element={<TestimonialsPage />} />
@@ -23,5 +32,26 @@ function App() {
     </>
   );
 }
+
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+    backgroundColor: '#f0f0f0',
+    textAlign: 'center',
+  },
+  heading: {
+    fontSize: '3rem',
+    color: '#333',
+  },
+  paragraph: {
+    fontSize: '1.5rem',
+    color: '#666',
+  },
+};
+
 
 export default App;
